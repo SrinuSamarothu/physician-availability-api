@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: availability-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: availability-api-deployment
+  template:
+    metadata:
+      labels:
+        app: availability-api-deployment
+    spec:
+      containers:
+        - name: availability-api-deployment
+          image: manoj1128/availabilityapi:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
+    
