@@ -23,7 +23,7 @@ builder.Services.AddScoped<ILogic, Logic>();
 
 var AllowAllPolicy = "AllowAllPolicy";
 builder.Services.AddCors(options =>
-options.AddPolicy(AllowAllPolicy, policy => { policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }));
+    options.AddPolicy(AllowAllPolicy, policy => { policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }));
 
 var app = builder.Build();
 
